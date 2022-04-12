@@ -26,9 +26,8 @@ phases:
      
 
       - echo generating app key
-      - php artisan key:generate
-
-      - echo Optimizing Configuration Loading
+    
+    
       - php artisan config:cache
 
   post_build:
