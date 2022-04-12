@@ -28,7 +28,7 @@ phases:
       - echo generating app key
     
     
-      - php artisan config:cache
+     
 
   post_build:
     commands:
