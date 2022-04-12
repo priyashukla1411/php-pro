@@ -4,5 +4,6 @@ phases:
     commands:
       - composer install
   build:
-    commands:
-      - phpunit tests
+     artifacts:
+       files:
+ - '**/*'
