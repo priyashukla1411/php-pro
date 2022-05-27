@@ -1,39 +1,21 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
-      php: 7.3
-  pre_build: # commands to be run before build
+      php: 7.4
+  pre_build:
     commands:
-      - echo Install composer
-      
-      - echo Move composer to bin location for excecution
-    
-  build:
-    commands:
-      - echo Build started on `date`
-
-      - echo installing composer...
-      
-      - echo installing node packages...
-      - npm install
-
-      - echo Run npm prod build
-      - npm run prod
-
-      - echo creating .env file...
-     
-
-      - echo generating app key
-    
-    
-     
-
+      # - apt-get install php 7.4
+      # - apt install composer
+      - composer global require laravel/installer
+      # - composer require --dev laravel/dusk
   post_build:
-    commands:
-      - echo Build completed on `date`
-
+    # run-as: ubuntu
+    commands: 
+      # - php artisan dusk
+      # - ./vendor/laravel/dusk/bin/chromedriver-linux
+      #- php artisan serve & sleep 30
+      
 artifacts:
   files:
-    - "**/*"
+    - '**/*'
